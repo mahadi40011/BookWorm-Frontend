@@ -23,7 +23,7 @@ export async function loginUser(formData) {
 
     const cookieStore = await cookies();
     cookieStore.set("token", data.token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24 * 7,
       path: "/",
